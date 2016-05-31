@@ -1,0 +1,12 @@
+doctype
+html(ng-app='myApp')
+    head
+        title CC Day
+        base(href="/")
+        link(rel="stylesheet", href="/vendor/bootstrap/dist/css/bootstrap.css")
+        link(rel="stylesheet", href="/vendor/toastr/toastr.css")
+        link(rel="stylesheet", href="/css/site.css")
+        block main-content
+        footer.container.text-center
+            div(ng-controller="mvMainCtrl")
+        include scripts

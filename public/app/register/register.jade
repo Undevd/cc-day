@@ -1,0 +1,105 @@
+.container
+    form.form-horizontal(name="regForm" ng-controller="formCtrl")
+        .well
+            div(ng-switch="page")
+                <!-- Welcome Page-->
+                div(ng-switch-when="Welcome")
+                    h1 Stroll or Sprint to Celebrate Shane's Life
+                    p All registration fees include car parking, tea/coffee/juice on arrival, lakeside walk and spectators activity and a BBQ
+                    p All funds raised will be donated to Shane's family's chosen charity, SOS Bus NI.
+                    .form-group
+                        .col-md-12.pull-right.btn.btn-default(ng-click="setPage('Person')") Next                                
+                <!-- Person Details -->
+                div(ng-switch-when="Person")
+                    h1 Registration Details
+                    .form-group
+                        label.col-md-4.control-label(for="name") Name: 
+                        .col-md-8
+                            input.form-control(type="text" name="name" placeholder="Name..." ng-model="name")
+                    .form-group
+                        label.col-md-4.control-label(for="contactnumber") Contact Number: 
+                        .col-md-8
+                            input.form-control(type="text" name="contactnumber" placeholder="Contact Number" ng-model="contactnumber")
+                    .form-group
+                        label.col-md-4.control-label(for="emailaddr") E-Mail: 
+                        .col-md-8
+                            input.form-control(type="text" name="emailaddr" placeholder="Contact E-mAil Address" ng-model="emailaddr")
+                    .form-group
+                        label.col-md-4.control-label(for="nextofkin") Next of Kin: 
+                        .col-md-8
+                            input.form-control(type="text" name="nextofkin" placeholder="Next of Kin" ng-model="nextofkin")
+                    .form-group
+                        label.col-md-4.control-label(for="nextofkin") Next of Kin Contact Number: 
+                        .col-md-8
+                            input.form-control(type="text" name="nextofkincontactnumber" placeholder="Next of Kin Contact Number" ng-model="nextofkincontactnumber")
+                    .form-group
+                        label.col-md-2.control-label(for="howdidyouhear") How did you hear about this event
+                        .col-md-10
+                            textarea.form-control(name="howdidyouhear", type="text", placeholder="How did you hear about this event?", ng-model="howdidyouhear")
+                    .form-group
+                        .col-md-6.btn.btn-default(ng-click="setPage('Welcome')") Back
+                        col-md-6.pull-right.btn.btn-default(ng-click="setPage('Transport')") Next                                
+                <!-- Transport -->
+                div(ng-switch-when="Transport")
+                    h1 Transport
+                    p SOS Mini buses will provide return transport from Belfast to Castlewellan. Cars can be securely parked in Weavers Court Business Park at the collection point.
+                    .form-group
+                        label.col-md-4.control-label(for="transportrequired") Do you require transport: 
+                        .col-md-8
+                            input.form-control(type="text" name="transportrequired" placeholder="Change to radio buttons" ng-model="transportrequired")
+                    .form-group
+                        label.col-md-4.control-label(for="transporthowmany") How many people: 
+                        .col-md-8
+                            input.form-control(type="text" name="transporthowmany" placeholder="How many people" ng-model="transporthowmany")
+                    .form-group
+                        .col-md-6.btn.btn-default(ng-click="setPage('Person')") Back
+                        col-md-6.pull-right.btn.btn-default(ng-click="setPage('Lunch')") Next                                
+                <!-- Lunch -->
+                div(ng-switch-when="Lunch")
+                    h1 Lunch
+                    p A BBQ is included with the registration fee for either event. Please indicate how many people in your party will be staying for lunch
+                    .form-group
+                        label.col-md-4.control-label(for="lunchadults") Adults: 
+                        .col-md-8
+                            input.form-control(type="text" name="lunchadults" placeholder="Number of adults" ng-model="lunchadults")
+                    .form-group
+                        label.col-md-4.control-label(for="lunchkids") Children: 
+                        .col-md-8
+                            input.form-control(type="text" name="lunchkids" placeholder="Number of children" ng-model="lunchkids")
+                    .form-group
+                        label.col-md-2.control-label(for="lunchdietaryreqs") Please detail any special dietary requirements within your party
+                        .col-md-10
+                            textarea.form-control(name="lunchdietaryreqs", type="text", placeholder="details...", ng-model="lunchdietaryreqs")
+                    .form-group
+                        .col-md-6.btn.btn-default(ng-click="setPage('Person')") Back
+                        col-md-6.pull-right.btn.btn-default(ng-click="setPage('Activities')") Next                                
+                <!-- Lunch -->
+                div(ng-switch-when="Activities")
+                    h1 Activities
+                    h2 Team Quest
+                    p A minimum age restriction of 11 years old is applicable. Children under the age of 17 must be accompanied by an adult. Maximum team size is 6 people. This event will run concurrently with the Walk and Spectator event.
+                    .form-group
+                        label.col-md-4.control-label(for="questadults") Adults (18 years old +) £10 x: 
+                        .col-md-8
+                            input.form-control(type="text" name="questadults" placeholder="Number of adults" ng-model="questadults")
+                    .form-group
+                        label.col-md-4.control-label(for="questkids") Children £10 x: 
+                        .col-md-8
+                            input.form-control(type="text" name="questkids" placeholder="Number of children" ng-model="questkids")  
+                    .form-group
+                        label.col-md-2.control-label(for="questmedical") Please disclose any relevant medical information:
+                        .col-md-10
+                            textarea.form-control(name="questmedical", type="text", placeholder="medical details...", ng-model="questmedical")                  
+                    h2 Walk and/or Spectator Activity Registration
+                    p Suitable for all ages
+                    .form-group
+                        label.col-md-4.control-label(for="walkadults") Adults (18 years old +) £5 x: 
+                        .col-md-8
+                            input.form-control(type="text" name="walkadults" placeholder="Number of adults" ng-model="walkadults")
+                    .form-group
+                        label.col-md-4.control-label(for="walkkids") Children £2.50 x: 
+                        .col-md-8
+                            input.form-control(type="text" name="walkkids" placeholder="Number of children" ng-model="walkkids")
+                    .form-group
+                        .col-md-6.btn.btn-default(ng-click="setPage('Lunch')") Back
+                        col-md-6.pull-right.btn.btn-default(ng-click="setPage('Service Details')") Submit
