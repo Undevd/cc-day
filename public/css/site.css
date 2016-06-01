@@ -1,0 +1,14 @@
+body {
+    margin: 5pc;
+}
+
+.well {
+    min-height: 25pc;
+}
+
+.btn {
+    min-width: 100px;
+    max-width: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

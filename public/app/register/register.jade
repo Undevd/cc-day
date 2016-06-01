@@ -19,25 +19,59 @@
                     .form-group
                         label.col-md-4.control-label(for="contactnumber") Contact Number: 
                         .col-md-8
-                            input.form-control(type="text" name="contactnumber" placeholder="Contact Number" ng-model="contactnumber")
+                            input.form-control(type="text" name="contactnumber" placeholder="Contact Number..." ng-model="contactnumber")
                     .form-group
                         label.col-md-4.control-label(for="emailaddr") E-Mail: 
                         .col-md-8
-                            input.form-control(type="text" name="emailaddr" placeholder="Contact E-mAil Address" ng-model="emailaddr")
+                            input.form-control(type="text" name="emailaddr" placeholder="E-Mail..." ng-model="emailaddr")
                     .form-group
                         label.col-md-4.control-label(for="nextofkin") Next of Kin: 
                         .col-md-8
-                            input.form-control(type="text" name="nextofkin" placeholder="Next of Kin" ng-model="nextofkin")
+                            input.form-control(type="text" name="nextofkin" placeholder="Next of Kin..." ng-model="nextofkin")
                     .form-group
                         label.col-md-4.control-label(for="nextofkin") Next of Kin Contact Number: 
                         .col-md-8
-                            input.form-control(type="text" name="nextofkincontactnumber" placeholder="Next of Kin Contact Number" ng-model="nextofkincontactnumber")
+                            input.form-control(type="text" name="nextofkincontactnumber" placeholder="Next of Kin Contact Number..." ng-model="nextofkincontactnumber")
                     .form-group
-                        label.col-md-2.control-label(for="howdidyouhear") How did you hear about this event
-                        .col-md-10
+                        label.col-md-4.control-label(for="howdidyouhear") How did you hear about this event
+                        .col-md-8
                             textarea.form-control(name="howdidyouhear", type="text", placeholder="How did you hear about this event?", ng-model="howdidyouhear")
                     .form-group
-                        .col-md-6.btn.btn-default(ng-click="setPage('Welcome')") Back
+                        .col-md-4.btn.btn-default(ng-click="setPage('Welcome')") Back
+                        col-md-8.pull-right.btn.btn-default(ng-click="setPage('Activities')") Next                                
+                <!-- Lunch -->
+                div(ng-switch-when="Activities")
+                    h1 Activities
+                    h3 Team Quest
+                    p A minimum age restriction of 11 years old is applicable. Children under the age of 17 must be accompanied by an adult. Maximum team size is 6 people. This event will run concurrently with the Walk and Spectator event.
+                    .form-group
+                        label.col-md-4.control-label(for="questadults") Adults (18 years old +) £10 x: 
+                        .col-md-8
+                            input.form-control(type="text" name="questadults" placeholder="Number of adults" ng-model="questadults")
+                    .form-group
+                        label.col-md-4.control-label(for="questkids") Children £10 x: 
+                        .col-md-8
+                            input.form-control(type="text" name="questkids" placeholder="Number of children" ng-model="questkids")  
+                    .form-group
+                        label.col-md-4.control-label(for="questmedical") Please disclose any relevant medical information:
+                        .col-md-8
+                            textarea.form-control(name="questmedical", type="text", placeholder="medical details...", ng-model="questmedical")                  
+                    h3 Walk and/or Spectator Activity Registration
+                    p Suitable for all ages
+                    .form-group
+                        label.col-md-4.control-label(for="walkadults") Adults (18 years old +) £5 x: 
+                        .col-md-8
+                            input.form-control(type="text" name="walkadults" placeholder="Number of adults" ng-model="walkadults")
+                    .form-group
+                        label.col-md-4.control-label(for="walkkids") Children £2.50 x: 
+                        .col-md-8
+                            input.form-control(type="text" name="walkkids" placeholder="Number of children" ng-model="walkkids")
+                    .form-group
+                        label.col-md-4.control-label(for="activitytotalcost") Total Cost: 
+                        .col-md-8
+                            input.form-control(type="text" name="activitytotalcost" placeholder="£0.00" disabled="true" ng-model="activitytotalcost")
+                    .form-group
+                        .col-md-6.btn.btn-default(ng-click="setPage('Person')") Back
                         col-md-6.pull-right.btn.btn-default(ng-click="setPage('Transport')") Next                                
                 <!-- Transport -->
                 div(ng-switch-when="Transport")
@@ -52,7 +86,7 @@
                         .col-md-8
                             input.form-control(type="text" name="transporthowmany" placeholder="How many people" ng-model="transporthowmany")
                     .form-group
-                        .col-md-6.btn.btn-default(ng-click="setPage('Person')") Back
+                        .col-md-6.btn.btn-default(ng-click="setPage('Activities')") Back
                         col-md-6.pull-right.btn.btn-default(ng-click="setPage('Lunch')") Next                                
                 <!-- Lunch -->
                 div(ng-switch-when="Lunch")
@@ -67,39 +101,9 @@
                         .col-md-8
                             input.form-control(type="text" name="lunchkids" placeholder="Number of children" ng-model="lunchkids")
                     .form-group
-                        label.col-md-2.control-label(for="lunchdietaryreqs") Please detail any special dietary requirements within your party
-                        .col-md-10
+                        label.col-md-4.control-label(for="lunchdietaryreqs") Please detail any special dietary requirements within your party
+                        .col-md-8
                             textarea.form-control(name="lunchdietaryreqs", type="text", placeholder="details...", ng-model="lunchdietaryreqs")
                     .form-group
                         .col-md-6.btn.btn-default(ng-click="setPage('Person')") Back
-                        col-md-6.pull-right.btn.btn-default(ng-click="setPage('Activities')") Next                                
-                <!-- Lunch -->
-                div(ng-switch-when="Activities")
-                    h1 Activities
-                    h2 Team Quest
-                    p A minimum age restriction of 11 years old is applicable. Children under the age of 17 must be accompanied by an adult. Maximum team size is 6 people. This event will run concurrently with the Walk and Spectator event.
-                    .form-group
-                        label.col-md-4.control-label(for="questadults") Adults (18 years old +) £10 x: 
-                        .col-md-8
-                            input.form-control(type="text" name="questadults" placeholder="Number of adults" ng-model="questadults")
-                    .form-group
-                        label.col-md-4.control-label(for="questkids") Children £10 x: 
-                        .col-md-8
-                            input.form-control(type="text" name="questkids" placeholder="Number of children" ng-model="questkids")  
-                    .form-group
-                        label.col-md-2.control-label(for="questmedical") Please disclose any relevant medical information:
-                        .col-md-10
-                            textarea.form-control(name="questmedical", type="text", placeholder="medical details...", ng-model="questmedical")                  
-                    h2 Walk and/or Spectator Activity Registration
-                    p Suitable for all ages
-                    .form-group
-                        label.col-md-4.control-label(for="walkadults") Adults (18 years old +) £5 x: 
-                        .col-md-8
-                            input.form-control(type="text" name="walkadults" placeholder="Number of adults" ng-model="walkadults")
-                    .form-group
-                        label.col-md-4.control-label(for="walkkids") Children £2.50 x: 
-                        .col-md-8
-                            input.form-control(type="text" name="walkkids" placeholder="Number of children" ng-model="walkkids")
-                    .form-group
-                        .col-md-6.btn.btn-default(ng-click="setPage('Lunch')") Back
-                        col-md-6.pull-right.btn.btn-default(ng-click="setPage('Service Details')") Submit
+                        col-md-6.pull-right.btn.btn-default(ng-click="setPage('Welcome')") Submit

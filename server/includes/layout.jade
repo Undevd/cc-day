@@ -4,8 +4,17 @@ html(ng-app='myApp')
         title CC Day
         base(href="/")
         link(rel="stylesheet", href="/vendor/bootstrap/dist/css/bootstrap.css")
-        link(rel="stylesheet", href="/vendor/toastr/toastr.css")
         link(rel="stylesheet", href="/css/site.css")
+        .navbar.navbar-inverse.navbar-fixed-top
+            .container
+                .navbar-header
+                    a.navbar-brand(href="/") CC Day
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href="/") Home
+                        li 
+                            a(href="/register") Register
         block main-content
         footer.container.text-center
             div(ng-controller="mvMainCtrl")
