@@ -12,9 +12,15 @@ html(ng-app='myApp')
                 .navbar-collapse.collapse
                     ul.nav.navbar-nav
                         li
-                            a(href="/") Home
+                            a(href="/about") About Us
+                        li
+                            a(href="/walk") Walk
+                        li
+                            a(href="/quest") Quest
                         li 
                             a(href="/register") Register
+                        li 
+                            a(href="/contact") Contact Us
         block main-content
         footer.container.text-center
             div(ng-controller="mvMainCtrl")

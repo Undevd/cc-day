@@ -5,7 +5,11 @@ angular.module('myApp').config(function($routeProvider, $locationProvider) {
 
     $routeProvider
         .when('/', { templateUrl: '/partials/main/main', controller: 'mvMainCtrl'})
+        .when('/about', { templateUrl: '/partials/greeting/about'})
         .when('/register', {templateUrl: '/partials/register/register', controller: 'formCtrl'})
+        .when('/walk', {templateUrl: '/partials/activities/walk'})
+        .when('/quest', {templateUrl: '/partials/activities/quest'})
+        .when('/contact', {templateUrl: '/partials/contact/contactus'})
 });
 
 angular.module('myApp').run(function($rootScope) {

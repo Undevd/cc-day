@@ -1,5 +1,17 @@
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
     margin: 5pc;
+    background-repeat: no-repeat;
+    background: yellow; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white,lemonchiffon, yellow, green); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white,lemonchiffon, yellow, green); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white,lemonchiffon, yellow, green); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white,lemonchiffon, yellow, green); /* Standard syntax */
+    overflow: hidden;
 }
 
 .well {

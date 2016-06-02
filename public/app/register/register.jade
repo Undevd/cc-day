@@ -15,27 +15,27 @@
                     .form-group
                         label.col-md-4.control-label(for="name") Name: 
                         .col-md-8
-                            input.form-control(type="text" name="name" placeholder="Name..." ng-model="name")
+                            input.form-control(type="text" name="name" placeholder="Name..." ng-model="details.name")
                     .form-group
                         label.col-md-4.control-label(for="contactnumber") Contact Number: 
                         .col-md-8
-                            input.form-control(type="text" name="contactnumber" placeholder="Contact Number..." ng-model="contactnumber")
+                            input.form-control(type="text" name="contactnumber" placeholder="Contact Number..." ng-model="details.contactnumber")
                     .form-group
                         label.col-md-4.control-label(for="emailaddr") E-Mail: 
                         .col-md-8
-                            input.form-control(type="text" name="emailaddr" placeholder="E-Mail..." ng-model="emailaddr")
+                            input.form-control(type="text" name="emailaddr" placeholder="E-Mail..." ng-model="details.emailaddr")
                     .form-group
                         label.col-md-4.control-label(for="nextofkin") Next of Kin: 
                         .col-md-8
-                            input.form-control(type="text" name="nextofkin" placeholder="Next of Kin..." ng-model="nextofkin")
+                            input.form-control(type="text" name="nextofkin" placeholder="Next of Kin..." ng-model="details.nextofkin.name")
                     .form-group
                         label.col-md-4.control-label(for="nextofkin") Next of Kin Contact Number: 
                         .col-md-8
-                            input.form-control(type="text" name="nextofkincontactnumber" placeholder="Next of Kin Contact Number..." ng-model="nextofkincontactnumber")
+                            input.form-control(type="text" name="nextofkincontactnumber" placeholder="Next of Kin Contact Number..." ng-model="details.nextofkin.contactnumber")
                     .form-group
                         label.col-md-4.control-label(for="howdidyouhear") How did you hear about this event
                         .col-md-8
-                            textarea.form-control(name="howdidyouhear", type="text", placeholder="How did you hear about this event?", ng-model="howdidyouhear")
+                            textarea.form-control(name="howdidyouhear", type="text", placeholder="How did you hear about this event?", ng-model="details.howdidyouhear")
                     .form-group
                         .col-md-4.btn.btn-default(ng-click="setPage('Welcome')") Welcome
                         col-md-8.pull-right.btn.btn-default(ng-click="setPage('Activities')") Activities                                
@@ -47,29 +47,29 @@
                     .form-group
                         label.col-md-4.control-label(for="questadults") Adults (18 years old +) £10 x: 
                         .col-md-8
-                            input.form-control(type="text" name="questadults" placeholder="Number of adults" ng-model="questadults")
+                            input.form-control(type="text" name="questadults" placeholder="Number of adults" ng-model="activities.quest.adults")
                     .form-group
                         label.col-md-4.control-label(for="questkids") Children £10 x: 
                         .col-md-8
-                            input.form-control(type="text" name="questkids" placeholder="Number of children" ng-model="questkids")  
+                            input.form-control(type="text" name="questkids" placeholder="Number of children" ng-model="activities.quest.kids")  
                     .form-group
                         label.col-md-4.control-label(for="questmedical") Please disclose any relevant medical information:
                         .col-md-8
-                            textarea.form-control(name="questmedical", type="text", placeholder="medical details...", ng-model="questmedical")                  
+                            textarea.form-control(name="questmedical", type="text", placeholder="medical details...", ng-model="activities.quest.medical")                  
                     h3 Walk and/or Spectator Activity Registration
                     p Suitable for all ages
                     .form-group
                         label.col-md-4.control-label(for="walkadults") Adults (18 years old +) £5 x: 
                         .col-md-8
-                            input.form-control(type="text" name="walkadults" placeholder="Number of adults" ng-model="walkadults")
+                            input.form-control(type="text" name="walkadults" placeholder="Number of adults" ng-model="activities.walk.adults")
                     .form-group
                         label.col-md-4.control-label(for="walkkids") Children £2.50 x: 
                         .col-md-8
-                            input.form-control(type="text" name="walkkids" placeholder="Number of children" ng-model="walkkids")
+                            input.form-control(type="text" name="walkkids" placeholder="Number of children" ng-model="activities.walk.kids")
                     .form-group
                         label.col-md-4.control-label(for="activitytotalcost") Total Cost: 
                         .col-md-8
-                            input.form-control(type="text" name="activitytotalcost" placeholder="£0.00" disabled="true" ng-model="activitytotalcost")
+                            input.form-control(type="text" name="activitytotalcost" placeholder="£0.00" disabled="true" ng-model="activities.totalcost")
                     .form-group
                         .col-md-6.btn.btn-default(ng-click="setPage('Person')") Register
                         col-md-6.pull-right.btn.btn-default(ng-click="setPage('Transport')") Transport                                
@@ -82,14 +82,14 @@
                         .col-md-8
                             label.col-md-2.control-label(for="transportrequired") Yes:
                             .col-md-2
-                                input.form-control(type="radio" name="transportrequired" value="true" ng-model="transportrequired")
+                                input.form-control(type="radio" name="transportrequired" value="true" ng-model="transport.required")
                             label.col-md-2.control-label(for="transportrequired") No: 
                             .col-md-2
-                                input.form-control(type="radio" name="transportrequired" value="false" ng-model="transportrequired")
+                                input.form-control(type="radio" name="transportrequired" value="false" ng-model="transport.required")
                     .form-group
                         label.col-md-4.control-label(for="transporthowmany") How many people: 
                         .col-md-8
-                            input.form-control(type="text" name="transporthowmany" placeholder="How many people" ng-model="transporthowmany")
+                            input.form-control(type="text" name="transporthowmany" placeholder="How many people" ng-model="transport.howmany")
                     .form-group
                         .col-md-6.btn.btn-default(ng-click="setPage('Activities')") Activities
                         col-md-6.pull-right.btn.btn-default(ng-click="setPage('Lunch')") Lunch                                
@@ -100,15 +100,15 @@
                     .form-group
                         label.col-md-4.control-label(for="lunchadults") Adults: 
                         .col-md-8
-                            input.form-control(type="text" name="lunchadults" placeholder="Number of adults" ng-model="lunchadults")
+                            input.form-control(type="text" name="lunchadults" placeholder="Number of adults" ng-model="lunch.adults")
                     .form-group
                         label.col-md-4.control-label(for="lunchkids") Children: 
                         .col-md-8
-                            input.form-control(type="text" name="lunchkids" placeholder="Number of children" ng-model="lunchkids")
+                            input.form-control(type="text" name="lunchkids" placeholder="Number of children" ng-model="lunch.kids")
                     .form-group
                         label.col-md-4.control-label(for="lunchdietaryreqs") Please detail any special dietary requirements within your party
                         .col-md-8
-                            textarea.form-control(name="lunchdietaryreqs", type="text", placeholder="details...", ng-model="lunchdietaryreqs")
+                            textarea.form-control(name="lunchdietaryreqs", type="text", placeholder="details...", ng-model="lunch.dietaryreqs")
                     .form-group
                         .col-md-6.btn.btn-default(ng-click="setPage('Transport')") Transport
                         col-md-6.pull-right.btn.btn-default(ng-click="setPage('Welcome')") Submit
