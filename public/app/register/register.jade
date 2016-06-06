@@ -111,4 +111,10 @@
                             textarea.form-control(name="lunchdietaryreqs", type="text", placeholder="details...", ng-model="lunch.dietaryreqs")
                     .form-group
                         .col-md-6.btn.btn-default(ng-click="setPage('Transport')") Transport
-                        col-md-6.pull-right.btn.btn-default(ng-click="setPage('Welcome')") Submit
+                        col-md-6.pull-right.btn.btn-default(ng-click="submit()") Submit                                
+                <!-- Submission Successful -->
+                div(ng-switch-when="Submission Successful")    
+                    p Success                            
+                <!-- Submission Failed -->
+                div(ng-switch-when="Submission Failed")
+                    p Failed

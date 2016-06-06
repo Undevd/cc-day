@@ -1,4 +1,10 @@
+var registration = require('../controllers/registration');
+
 module.exports = function(app) {
+    
+    // Registration routes
+    app.post('/api/registration', registration.createRegistration);
+    
     //Default routes
     app.get('/partials/*', function(req, res) {
         console.log(req.params);
