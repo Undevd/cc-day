@@ -6,16 +6,19 @@ body {
     height: 100%;
     margin: 5pc;
     background-repeat: no-repeat;
-    background: yellow; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(white,lemonchiffon, yellow, green); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(white,lemonchiffon, yellow, green); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(white,lemonchiffon, yellow, green); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white,lemonchiffon, yellow, green); /* Standard syntax */
+    background: #3B8896; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white,#8ccfb7, #3B8896, #3B8896); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white,#8ccfb7, #3B8896, #3B8896); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white,#8ccfb7, #3B8896, #3B8896); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white,#8ccfb7, #3B8896, #3B8896); /* Standard syntax */
     overflow: hidden;
 }
 
 .well {
     min-height: 25pc;
+    max-height: 38pc;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .btn {

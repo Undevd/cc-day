@@ -7,7 +7,7 @@ var dbName = process.env.MONGODB_DBNAME || "";
 
 module.exports = {
     development: {
-        db: 'mongodb://localhost/ccday',
+        db: 'mongodb://admin:Pa$$w0rd@ds023373.mlab.com:23373/ccdayregistration',
         port: process.env.PORT || 4450,
         rootPath: rootPath
     },
