@@ -31,16 +31,19 @@ exports.createRegistration = function(request, response) {
 
     //Create the registration
     Registration.createRegistration(newRegistrationData).then(function(code) {
-
-        //Set the success status and send the new registration code
-        response.status(201).send({code: code});
-
+        console.log('Success, sending e-mail to: ' + registrationData.email_addr);
         sparky.transmissions.send({
             transmissionBody: {
                 content: {
-                from: 'testing@' + process.env.SPARKPOST_SANDBOX_DOMAIN, // 'testing@sparkpostbox.com'
-                subject: 'Registration Successful',
-                html:'<html><body><p>Testing Registration</p></body></html>'
+                from: 'registration@' + process.env.SPARKPOST_SANDBOX_DOMAIN, // 'testing@sparkpostbox.com'
+                subject: 'Stroll or sprint for Shane',
+                html:`<html>
+                        <body>
+                            <h1>Stroll or sprint for Shane</h1>
+                            <p>Hi ` + registrationData.name + `,</p>
+                            <p>Thanks for registering for the event and we look forward to seeing you there.</p>
+                        </body>
+                    </html>`
                 },
                 recipients: [
                 {address: registrationData.email_addr}
@@ -53,6 +56,11 @@ exports.createRegistration = function(request, response) {
                 console.log('Confirmation e-mail sent to: ' + registrationData.email_addr);
             }
         });
+
+        //Set the success status and send the new registration code
+        response.status(201).send({code: code});
+
+        
 
     }, function(error) {
 
