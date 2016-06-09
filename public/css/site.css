@@ -3,22 +3,30 @@ html {
 }
 
 body {
-    height: 100%;
     margin: 5pc;
     background-repeat: no-repeat;
-    background: #3B8896; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(white,#8ccfb7, #3B8896, #3B8896); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(white,#8ccfb7, #3B8896, #3B8896); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(white,#8ccfb7, #3B8896, #3B8896); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white,#8ccfb7, #3B8896, #3B8896); /* Standard syntax */
-    overflow: hidden;
+    background: yellow;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    background-color: #4f1c77;
+}
+
+.navbar-brand:hover {
+    background-color: darkslateblue !important;
+    color: ghostwhite !important;
+}
+
+.navbar-nav li a:hover {
+    background-color: darkslateblue !important;
+    color: ghostwhite !important;
 }
 
 .well {
-    min-height: 25pc;
-    max-height: 38pc;
-    overflow: scroll;
-    overflow-x: hidden;
+    background-color: lightgoldenrodyellow;
+    min-height: 50pc;
+    max-height: 50pc;
 }
 
 .btn {
