@@ -1,4 +1,6 @@
 var Registration = require('mongoose').model('Registration');
+var SparkPost = require('sparkpost');
+var sparky = new SparkPost();
 
 //Creates a new registration
 exports.createRegistration = function(request, response) {
@@ -32,6 +34,25 @@ exports.createRegistration = function(request, response) {
 
         //Set the success status and send the new registration code
         response.status(201).send({code: code});
+
+        sparky.transmissions.send({
+            transmissionBody: {
+                content: {
+                from: 'testing@' + process.env.SPARKPOST_SANDBOX_DOMAIN, // 'testing@sparkpostbox.com'
+                subject: 'Registration Successful',
+                html:'<html><body><p>Testing Registration</p></body></html>'
+                },
+                recipients: [
+                {address: registrationData.email_addr}
+                ]
+            }
+            }, function(err, res) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log('Confirmation e-mail sent to: ' + registrationData.email_addr);
+            }
+        });
 
     }, function(error) {
 
