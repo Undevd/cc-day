@@ -47,11 +47,11 @@
                     .form-group
                         label.col-md-4.control-label(for="questadults") Adults (18 years old +) £10 x: 
                         .col-md-8
-                            input.form-control(type="text" name="questadults" placeholder="Number of adults" ng-model="activities.quest.adults")
+                            input.form-control(type="text" name="questadults" placeholder="Number of adults" ng-model="activities.quest.adults" ng-change="calculateTotal()")
                     .form-group
                         label.col-md-4.control-label(for="questkids") Children £10 x: 
                         .col-md-8
-                            input.form-control(type="text" name="questkids" placeholder="Number of children" ng-model="activities.quest.kids")  
+                            input.form-control(type="text" name="questkids" placeholder="Number of children" ng-model="activities.quest.kids" ng-change="calculateTotal()")  
                     .form-group
                         label.col-md-4.control-label(for="questmedical") Please disclose any relevant medical information:
                         .col-md-8
@@ -61,11 +61,11 @@
                     .form-group
                         label.col-md-4.control-label(for="walkadults") Adults (18 years old +) £5 x: 
                         .col-md-8
-                            input.form-control(type="text" name="walkadults" placeholder="Number of adults" ng-model="activities.walk.adults")
+                            input.form-control(type="text" name="walkadults" placeholder="Number of adults" ng-model="activities.walk.adults" ng-change="calculateTotal()")
                     .form-group
                         label.col-md-4.control-label(for="walkkids") Children £2.50 x: 
                         .col-md-8
-                            input.form-control(type="text" name="walkkids" placeholder="Number of children" ng-model="activities.walk.kids")
+                            input.form-control(type="text" name="walkkids" placeholder="Number of children" ng-model="activities.walk.kids" ng-change="calculateTotal()")
                     .form-group
                         label.col-md-4.control-label(for="activitytotalcost") Total Cost: 
                         .col-md-8

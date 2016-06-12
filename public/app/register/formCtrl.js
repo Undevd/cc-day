@@ -17,7 +17,7 @@ angular.module('myApp').controller('formCtrl', function($scope, dbSvc) {
     $scope.activities.walk = [],
     $scope.activities.walk.adults = 0,
     $scope.activities.walk.kids = 0,
-    $scope.activities.totalcost = (($scope.activities.quest.adults + $scope.activities.quest.kids) * 10) + ($scope.activities.walk.adults * 5) + ($scope.activities.walk.kids * 2.5),
+    $scope.activities.totalcost = 0,
     $scope.transport = [],
     $scope.transport.required = false,
     $scope.transport.howmany = 0,
@@ -29,6 +29,11 @@ angular.module('myApp').controller('formCtrl', function($scope, dbSvc) {
     $scope.setPage = function(pageName) {
         console.log(pageName);
         $scope.page = pageName;
+    },
+
+    $scope.calculateTotal = function() {
+        console.log("In method");
+        $scope.activities.totalcost = ($scope.activities.quest.adults * 10) + ($scope.activities.quest.kids * 10) + ($scope.activities.walk.adults * 5) + ($scope.activities.walk.kids * 2.5)
     },
     
     $scope.submit = function() {
