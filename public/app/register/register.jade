@@ -36,14 +36,14 @@
                         label.col-md-4.control-label(for="howdidyouhear") How did you hear about this event
                         .col-md-8
                             select.form-control(name="howdidyouhear" ng-model="details.howdidyouhear")
-                                option(value="")
+                                option(value="") Please select...
                                 option(value="The Mullan Family") The Mullan Family
                                 option(value="Civica") Civica
                                 option(value="SOS Bus NI") SOS Bus NI
                                 option(value="Other") Other
                     .form-group
                         .col-md-4.btn.btn-primary(ng-click="setPage('Welcome')") Welcome
-                        col-md-8.pull-right.btn.btn-primary(ng-click="setPage('Activities')") Activities                                
+                        .col-md-8.pull-right.btn.btn-primary(ng-click="setPage('Activities')") Activities                                
                 <!-- Lunch -->
                 div(ng-switch-when="Activities")
                     h1 Activities
@@ -83,7 +83,7 @@
                             input.form-control(type="text" name="activitytotalcost" placeholder="£0.00" disabled="true" ng-model="activities.totalcost")
                     .form-group
                         .col-md-6.btn.btn-primary(ng-click="setPage('Person')") Register
-                        col-md-6.pull-right.btn.btn-primary(ng-click="setPage('Transport')") Transport                                
+                        .col-md-6.pull-right.btn.btn-primary(ng-click="setPage('Transport')") Transport                                
                 <!-- Transport -->
                 div(ng-switch-when="Transport")
                     h1 Transport
@@ -103,7 +103,7 @@
                             input.form-control(type="text" name="transporthowmany" placeholder="How many people" ng-model="transport.howmany")
                     .form-group
                         .col-md-6.btn.btn-primary(ng-click="setPage('Activities')") Activities
-                        col-md-6.pull-right.btn.btn-primary(ng-click="setPage('Lunch')") Lunch                                
+                        .col-md-6.pull-right.btn.btn-primary(ng-click="setPage('Lunch')") Lunch                                
                 <!-- Lunch -->
                 div(ng-switch-when="Lunch")
                     h1 Lunch
@@ -122,7 +122,7 @@
                             textarea.form-control(name="lunchdietaryreqs", type="text", placeholder="Details...", ng-model="lunch.dietaryreqs")
                     .form-group
                         .col-md-6.btn.btn-primary(ng-click="setPage('Transport')") Transport
-                        col-md-6.pull-right.btn.btn-success(ng-click="submit()") Submit                                
+                        .col-md-6.pull-right.btn.btn-success(ng-click="submit()") Submit                                
                 <!-- Submission Successful -->
                 div(ng-switch-when="Submission Successful")    
                     h1 Registration Successful
