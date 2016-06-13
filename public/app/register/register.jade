@@ -35,7 +35,12 @@
                     .form-group
                         label.col-md-4.control-label(for="howdidyouhear") How did you hear about this event
                         .col-md-8
-                            textarea.form-control(name="howdidyouhear", type="text", placeholder="How did you hear about this event?", ng-model="details.howdidyouhear")
+                            select.form-control(name="howdidyouhear" ng-model="details.howdidyouhear")
+                                option(value="")
+                                option(value="The Mullan Family") The Mullan Family
+                                option(value="Civica") Civica
+                                option(value="SOS Bus NI") SOS Bus NI
+                                option(value="Other") Other
                     .form-group
                         .col-md-4.btn.btn-primary(ng-click="setPage('Welcome')") Welcome
                         col-md-8.pull-right.btn.btn-primary(ng-click="setPage('Activities')") Activities                                
@@ -55,7 +60,12 @@
                     .form-group
                         label.col-md-4.control-label(for="questmedical") Please disclose any relevant medical information:
                         .col-md-8
-                            textarea.form-control(name="questmedical", type="text", placeholder="medical details...", ng-model="activities.quest.medical")                  
+                            textarea.form-control(name="questmedical", type="text", placeholder="medical details...", ng-model="activities.quest.medical")   
+                    p The following forms will need to be completed and handed in on the day. Copies will be available upon arrival, however it would speed up the registration process if you were to download and complete the form in advance.
+                    div
+                        a(href="assets/LifeParentalConsent.pdf" download="Participant Registration Form.pdf" target="_blank") Participant Registration Form
+                    div
+                        a(href="assets/LifeParentalConsent.pdf" download="Parental Consent Form.pdf" target="_blank") Parental Consent Form
                     h3 Walk and/or Spectator Activity Registration
                     p Suitable for all ages
                     .form-group
