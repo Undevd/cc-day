@@ -5,12 +5,17 @@ html {
 body {
     margin: 5pc;
     background-repeat: no-repeat;
-    background: yellow;
+    background: #ffdf42;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .navbar {
     background-color: #4f1c77;
+    font-weight: bold;
+}
+
+.navbar-brand {
+    font-weight: bolder;
 }
 
 .navbar-brand:hover {
@@ -27,6 +32,9 @@ body {
     background-color: lightgoldenrodyellow;
     min-height: 50pc;
     max-height: 50pc;
+    padding-left: 10pc;
+    padding-right: 10pc;
+    overflow: auto;
 }
 
 .btn {
@@ -34,5 +42,4 @@ body {
     max-width: 100px;
     margin-left: 40px;
     margin-right: 40px;
-    vertical-align: bottom;
 }
