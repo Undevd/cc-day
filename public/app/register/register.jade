@@ -47,33 +47,34 @@
                 <!-- Lunch -->
                 div(ng-switch-when="Activities")
                     h1 Activities
-                    h3 Team Quest
-                    p A minimum age restriction of 11 years old is applicable. Children under the age of 17 must be accompanied by an adult. Maximum team size is 6 people. This event will run concurrently with the Walk and Spectator event.
+                    h3 Team Adventure Challenge Registration
+                    p Young people under the age of 17 should be accompanied by an adult; minimum age restriction of 11 years old is applicable for this event.
                     .form-group
-                        label.col-md-4.control-label(for="questadults") Adults (18 years old +) £10 x: 
+                        label.col-md-4.control-label(for="questadults") Adults (18+) £10pp x: 
                         .col-md-8
                             input.form-control(type="text" name="questadults" placeholder="Number of adults" ng-model="activities.quest.adults" ng-change="calculateTotal()")
                     .form-group
-                        label.col-md-4.control-label(for="questkids") Children £10 x: 
+                        label.col-md-4.control-label(for="questkids") Young People (11-17) £10pp x: 
                         .col-md-8
                             input.form-control(type="text" name="questkids" placeholder="Number of children" ng-model="activities.quest.kids" ng-change="calculateTotal()")  
                     .form-group
-                        label.col-md-4.control-label(for="questmedical") Please disclose any relevant medical information:
+                        label.col-md-4.control-label(for="questmedical") Please disclose any relevant medical or behavioural conditions:
                         .col-md-8
-                            textarea.form-control(name="questmedical", type="text", placeholder="medical details...", ng-model="activities.quest.medical")   
+                            textarea.form-control(name="questmedical", type="text", placeholder="Details...", ng-model="activities.quest.medical")   
                     p The following forms will need to be completed and handed in on the day. Copies will be available upon arrival, however it would speed up the registration process if you were to download and complete the form in advance.
                     div
                         a(href="assets/LifeParentalConsent.pdf" download="Participant Registration Form.pdf" target="_blank") Participant Registration Form
                     div
                         a(href="assets/LifeParentalConsent.pdf" download="Parental Consent Form.pdf" target="_blank") Parental Consent Form
-                    h3 Walk and/or Spectator Activity Registration
+                    h3 Walk and/or Spectator Activity Registration                 
+                    h3 Lakeside Walk and/or Spectator Activity Registration
                     p Suitable for all ages
                     .form-group
-                        label.col-md-4.control-label(for="walkadults") Adults (18 years old +) £5 x: 
+                        label.col-md-4.control-label(for="walkadults") Adults (18+) £5pp x: 
                         .col-md-8
                             input.form-control(type="text" name="walkadults" placeholder="Number of adults" ng-model="activities.walk.adults" ng-change="calculateTotal()")
                     .form-group
-                        label.col-md-4.control-label(for="walkkids") Children £2.50 x: 
+                        label.col-md-4.control-label(for="walkkids") Children £2.50pp x: 
                         .col-md-8
                             input.form-control(type="text" name="walkkids" placeholder="Number of children" ng-model="activities.walk.kids" ng-change="calculateTotal()")
                     .form-group
@@ -86,7 +87,7 @@
                 <!-- Transport -->
                 div(ng-switch-when="Transport")
                     h1 Transport
-                    p SOS Mini buses will provide return transport from Belfast to Castlewellan. Cars can be securely parked in Weavers Court Business Park at the collection point.
+                    p SOS Mini buses will provide return transport from Belfast to Castlewellan. Cars can be securely parked in Weavers Court Business Park at the collection point. There are 40 spaces available for allocation, confirmation of allocation will be sent separately after registration. 
                     .form-group
                         label.col-md-4.control-label(for="transportrequired") Do you require transport: 
                         .col-md-8
@@ -106,7 +107,7 @@
                 <!-- Lunch -->
                 div(ng-switch-when="Lunch")
                     h1 Lunch
-                    p A BBQ is included with the registration fee for either event. Please indicate how many people in your party will be staying for lunch
+                    p A BBQ lunch is included in the registration fee. Please indicate how many people in your party will be staying for lunch.
                     .form-group
                         label.col-md-4.control-label(for="lunchadults") Adults: 
                         .col-md-8
@@ -118,7 +119,7 @@
                     .form-group
                         label.col-md-4.control-label(for="lunchdietaryreqs") Please detail any special dietary requirements within your party
                         .col-md-8
-                            textarea.form-control(name="lunchdietaryreqs", type="text", placeholder="details...", ng-model="lunch.dietaryreqs")
+                            textarea.form-control(name="lunchdietaryreqs", type="text", placeholder="Details...", ng-model="lunch.dietaryreqs")
                     .form-group
                         .col-md-6.btn.btn-primary(ng-click="setPage('Transport')") Transport
                         col-md-6.pull-right.btn.btn-success(ng-click="submit()") Submit                                
