@@ -35,7 +35,7 @@ exports.createRegistration = function(request, response) {
         sparky.transmissions.send({
             transmissionBody: {
                 content: {
-                from: 'registration@' + process.env.SPARKPOST_SANDBOX_DOMAIN, // 'testing@sparkpostbox.com'
+                from: 'registration@strollorsprint.co.uk',
                 subject: 'Stroll or sprint for Shane',
                 html:`<html>
                         <body>
@@ -61,7 +61,7 @@ exports.createRegistration = function(request, response) {
         sparky.transmissions.send({
             transmissionBody: {
                 content: {
-                from: 'registration@' + process.env.SPARKPOST_SANDBOX_DOMAIN, // 'testing@sparkpostbox.com'
+                from: 'registration@strollorsprint.co.uk',
                 subject: 'Registration Received',
                 html:`<html>
                         <body>
