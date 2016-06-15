@@ -15,6 +15,10 @@ module.exports = function(app) {
         res.sendStatus(404);
     });
     
+    app.get('/', function(req, res) {
+        res.render('under_construction');
+    });
+
     app.get('*', function(req, res) {
         res.render('index');
     });

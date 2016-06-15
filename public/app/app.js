@@ -4,7 +4,7 @@ angular.module('myApp').config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
     $routeProvider
-        .when('/', { templateUrl: '/partials/main/main', controller: 'mvMainCtrl'})
+        .when('/home', { templateUrl: '/partials/main/main', controller: 'mvMainCtrl'})
         .when('/about', { templateUrl: '/partials/greeting/about'})
         .when('/register', {templateUrl: '/partials/register/register', controller: 'formCtrl'})
         .when('/walk', {templateUrl: '/partials/activities/walk'})
@@ -15,5 +15,5 @@ angular.module('myApp').config(function($routeProvider, $locationProvider) {
 angular.module('myApp').run(function($rootScope) {
 
     //Set the default title
-    var defaultTitle = 'CC Day';
+    var defaultTitle = 'Sprint or Stroll';
 });
