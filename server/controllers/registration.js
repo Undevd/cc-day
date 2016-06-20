@@ -38,12 +38,58 @@ exports.createRegistration = function(request, response) {
                 from: 'registration@strollorsprint.co.uk',
                 subject: 'Stroll or sprint for Shane',
                 html:`<html>
+                        <head>
+                            <link rel="stylesheet" type="text/css" href="https://www.strollorsprint.co.uk/vendor/bootstrap/dist/css/bootstrap.css" />
+                            <link rel="stylesheet" type="text/css" href="https://www.strollorsprint.co.uk/css/site.css" /> 
+                        </head>
                         <body>
-                            <h1>Stroll or sprint for Shane</h1>
-                            <p>Hi ` + registrationData.name + `,</p>
-                            <p>Thanks for registering for the event and we look forward to seeing you there.</p>
-                        </body>
-                    </html>`
+                            <div class="well">
+                                <h3>Thank you for registering for Stroll or Sprint!</h3>
+                                <h3>We look forward to seeing you on Saturday 13th August!</h3>
+
+                                <p>
+                                    <b>Some useful information:</b>
+                                </p>
+                                <p>Registration begins at 9.30am for Team Adventure Challenge event and 10.00am for Lakeside Walk and Spectators event.</p>
+                                <p>Remember if you have requested a seat on the mini bus you will receive confirmation <b>separately</b>.</p>
+                                <p>
+                                    <b>FAQs... Clothing/Equipment?</b>
+                                </p>
+                                <p>As a guide we would suggest you bring...</p>
+                                <ul>
+                                    <li>Waterproof trousers/ Tracksuit bottoms</li>
+                                    <li>T-shirts or thermal tops</li>
+                                    <li>Warm jacket/ fleece,</li>
+                                    <li>Socks & underwear</li>
+                                    <li>Footwear (Wellies and sturdy boots/shoes)</li>
+                                    <li>Warm hat & gloves and a;</li>
+                                    <li>Towel!</li>
+                                </ul>
+                                <p>If participating in water based activities also bring...</p>
+                                <ul>
+                                    <li>Swimming costumes or shorts</li>
+                                    <li>Trainers (old)</li>
+                                    <li>More Towels!!!</li>
+                                </ul>
+                                <p>
+                                    <b>Life Adventure Co will supply wetsuits</b>
+                                </p>
+                                <p>And finally you might find these useful...</p>
+                                <ul>
+                                    <li>Polythene bag for dirty/ wet laundry</li>
+                                </ul>
+                                <p>The above needs to be brought in addition to the clothes you wear to and from the centre!</p>
+                                <p>The Life Team advise that you do not bring any valuables!</p>
+                                <p>
+                                    <b>For more information please visit our website, <a href="https://www.strollorsprint.co.uk" target="_blank">www.strollorsprint.co.uk</a> or email <a href="mailto:cdsi-csr@civica.co.uk">cdsi-csr@civica.co.uk</a>.</b>
+                                </p> 
+
+                                <p>
+                                    <b>All fundraising proceeds from this event will go to SOS Bus NI, the chosen charity of Shane Mullan's</b>
+                                </p>
+                            </div>
+                            <body>
+                        </html>`
                 },
                 recipients: [
                 {address: registrationData.email_addr}
