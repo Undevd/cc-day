@@ -39,9 +39,28 @@ body {
 .btn {
     min-width: 120px;
     max-width: 120px;
+    margin-top: 2pc;
 }
 
-h3 {
+.regbtn {
+    min-width: 15pc;
+    min-height: 6pc;
+    text-align: center;
+    font-size: xx-large;
+    display: block;
+    margin: auto;
+    margin-top: 2pc;
+    line-height: 6pc;
+}
+
+h3, h4{
     color: darkgoldenrod;
     text-align: center;
+    padding-bottom: 10px;
+}
+
+.quotation {
+    padding: 2pc;
+    font-weight: bold;
+    font-style: italic;
 }

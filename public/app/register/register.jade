@@ -8,14 +8,14 @@
                     p All registration fees include car parking, tea/coffee/juice on arrival, lakeside walk and spectators activity and a BBQ
                     p All funds raised will be donated to Shane's family's chosen charity, SOS Bus NI.
                     .form-group
-                        .col-md-12.pull-right.btn.btn-primary(ng-click="setPage('Person')") Register                                
+                        .btn.btn-primary.regbtn(ng-click="setPage('Person')") Sign Up!                                
                 <!-- Person Details -->
                 div(ng-switch-when="Person")
                     h3 Registration Details
                     .form-group
                         label.col-md-4.control-label(for="name") Name: 
                         .col-md-8
-                            input.form-control(type="text" name="name" placeholder="Name..." ng-model="details.name")
+                            input.form-control(type="text" name="name" placeholder="Name..." ng-model="details.name" required="required")
                     .form-group
                         label.col-md-4.control-label(for="contactnumber") Contact Number: 
                         .col-md-8
@@ -47,7 +47,7 @@
                 <!-- Lunch -->
                 div(ng-switch-when="Activities")
                     h3 Activities
-                    h3 Team Adventure Challenge Registration
+                    h4 Team Adventure Challenge Registration
                     p Young people under the age of 17 should be accompanied by an adult; minimum age restriction of 11 years old is applicable for this event.
                     p(style="color:red;")
                         b Participants are required to bring suitably sturdy outdoor footwear with ankle support and sufficient grip for wet/uneven surfaces and suitable comfortable clothing – Denims and cotton are not ideally suited. Given that participants may get wet, we suggest brining  full change of clothes including footwear with shower and changing facilities available.
@@ -67,9 +67,8 @@
                     div
                         a(href="assets/LifeParentalConsent.pdf" download="Participant Registration Form.pdf" target="_blank") Participant Registration Form
                     div
-                        a(href="assets/LifeParentalConsent.pdf" download="Parental Consent Form.pdf" target="_blank") Parental Consent Form
-                    h3 Walk and/or Spectator Activity Registration                 
-                    h3 Lakeside Walk and/or Spectator Activity Registration
+                        a(href="assets/LifeParentalConsent.pdf" download="Parental Consent Form.pdf" target="_blank") Parental Consent Form                 
+                    h4 Lakeside Walk and/or Spectator Activity Registration
                     p Suitable for all ages
                     .form-group
                         label.col-md-4.control-label(for="walkadults") Adults (18+) £5pp x: 
@@ -90,8 +89,8 @@
                 div(ng-switch-when="Transport")
                     h3 Transport
                     p SOS Mini buses will provide return transport from Belfast to Castlewellan. Cars can be securely parked in Weavers Court Business Park at the collection point. There are 40 spaces available for allocation, confirmation of allocation will be sent separately after registration.
-                    p <b>Leaving Belfast - 08:30, arriving at Castlewellan - 09:30</b>
-                    p <b>Leaving Castlewellan - 14:30, arriving at Belfast - 15:30</b> 
+                    p <i>Leaving Belfast - 08:30, arriving at Castlewellan - 09:30</i>
+                    p <i>Leaving Castlewellan - 14:30, arriving at Belfast - 15:30</i> 
                     .form-group
                         label.col-md-4.control-label(for="transportrequired") Do you require transport: 
                         .col-md-8
@@ -131,8 +130,8 @@
                 div(ng-switch-when="Submission Successful")    
                     h3 Registration Successful
                     h3 Looking forward to seeing you there!
-                    p If you would like to make any amendments please e-mail us @ ...                            
+                    p If you would like to make any amendments please e-mail us @ <a href="mailto:cdsi-csr@civica.co.uk?Subject=Stroll%20or%20Sprint%20amendment">cdsi-csr@civica.co.uk</a>                            
                 <!-- Submission Failed -->
                 div(ng-switch-when="Submission Failed")
-                    h3 Something has gone wrong
-                    p Please try again, if the problem persists please contact us @ ...
+                    h3(style="color: red;") Something has gone wrong
+                    p Please try again, if the problem persists please contact us @ <a href="mailto:cdsi-csr@civica.co.uk?Subject=Stroll%20or%20Sprint%20query">cdsi-csr@civica.co.uk</a>
