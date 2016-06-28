@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 
 var registrationSchema = mongoose.Schema({
-    name: {type: String},
+    name: {type: String, required: true},
     contact_number: {type: String},
-    email_addr: {type: String},
+    email_addr: {type: String, required: true},
     next_of_kin: {type: String},
     next_of_kin_contact_number: {type: String},
     how_did_you_hear: {type: String},

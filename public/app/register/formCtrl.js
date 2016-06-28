@@ -9,6 +9,7 @@ angular.module('myApp').controller('formCtrl', function($scope, dbSvc) {
     $scope.details.nextofkin.name = "",
     $scope.details.nextofkin.contactnumber = "",
     $scope.details.howdidyouhear = "",
+    $scope.details.disabled = true,
     $scope.activities = [],
     $scope.activities.quest = [],
     $scope.activities.quest.adults = 0,
@@ -17,7 +18,7 @@ angular.module('myApp').controller('formCtrl', function($scope, dbSvc) {
     $scope.activities.walk = [],
     $scope.activities.walk.adults = 0,
     $scope.activities.walk.kids = 0,
-    $scope.activities.totalcost = 0,
+    $scope.activities.totalcost = 0.00,
     $scope.transport = [],
     $scope.transport.required = false,
     $scope.transport.howmany = 0,
@@ -27,13 +28,22 @@ angular.module('myApp').controller('formCtrl', function($scope, dbSvc) {
     $scope.lunch.dietaryreqs = "",
     
     $scope.setPage = function(pageName) {
-        console.log(pageName);
         $scope.page = pageName;
     },
 
     $scope.calculateTotal = function() {
-        console.log("In method");
-        $scope.activities.totalcost = ($scope.activities.quest.adults * 10) + ($scope.activities.quest.kids * 10) + ($scope.activities.walk.adults * 5) + ($scope.activities.walk.kids * 2.5)
+        var temp = ($scope.activities.quest.adults * 10) + ($scope.activities.quest.kids * 10) + ($scope.activities.walk.adults * 5) + ($scope.activities.walk.kids * 2.5);
+        $scope.activities.totalcost = temp.toFixed(2)
+    },
+
+    $scope.validatePerson = function() {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if($scope.details.name != "" && re.test($scope.details.emailaddr)) {
+            $scope.details.disabled = false;
+        }
+        else {
+            $scope.details.disabled = true;
+        }
     },
     
     $scope.submit = function() {

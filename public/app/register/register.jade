@@ -13,17 +13,17 @@
                 div(ng-switch-when="Person")
                     h3 Registration Details
                     .form-group
-                        label.col-md-4.control-label(for="name") Name: 
+                        label.col-md-4.control-label(for="name") Name: *
                         .col-md-8
-                            input.form-control(type="text" name="name" placeholder="Name..." ng-model="details.name" required="required")
+                            input.form-control(type="text" name="name" placeholder="Name..." ng-model="details.name" required="required" ng-change="validatePerson()")
                     .form-group
                         label.col-md-4.control-label(for="contactnumber") Contact Number: 
                         .col-md-8
                             input.form-control(type="text" name="contactnumber" placeholder="Contact Number..." ng-model="details.contactnumber")
                     .form-group
-                        label.col-md-4.control-label(for="emailaddr") E-Mail: 
+                        label.col-md-4.control-label(for="emailaddr") E-Mail: *
                         .col-md-8
-                            input.form-control(type="text" name="emailaddr" placeholder="E-Mail..." ng-model="details.emailaddr")
+                            input.form-control(type="text" name="emailaddr" placeholder="E-Mail..." ng-model="details.emailaddr" ng-change="validatePerson()")
                     .form-group
                         label.col-md-4.control-label(for="nextofkin") Next of Kin: 
                         .col-md-8
@@ -41,9 +41,10 @@
                                 option(value="Civica") Civica
                                 option(value="SOS Bus NI") SOS Bus NI
                                 option(value="Other") Other
+                    p(class="validation-msg" ng-show="details.disabled") Please provide your name and e-mail address
                     .form-group
                         .col-md-4.btn.btn-primary(ng-click="setPage('Welcome')") Welcome
-                        .col-md-8.pull-right.btn.btn-primary(ng-click="setPage('Activities')") Activities                                
+                        .col-md-8.pull-right.btn.btn-primary(ng-disabled="details.disabled" ng-click="setPage('Activities')") Activities                                
                 <!-- Lunch -->
                 div(ng-switch-when="Activities")
                     h3 Activities
