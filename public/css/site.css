@@ -53,9 +53,15 @@ body {
     line-height: 6pc;
 }
 
-h3, h4{
+h3{
     color: darkgoldenrod;
     text-align: center;
+    padding-bottom: 10px;
+}
+
+h4{
+    color: darkgoldenrod;
+    padding-top: 10px;
     padding-bottom: 10px;
 }
 
