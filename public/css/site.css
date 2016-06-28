@@ -77,3 +77,7 @@ h4{
    background-color: grey;
    margin-bottom: 20px;
  }
+
+ #total-cost-div {
+     padding: 10px;
+ }

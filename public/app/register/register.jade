@@ -5,7 +5,7 @@
                 <!-- Welcome Page-->
                 div(ng-switch-when="Welcome")
                     h3 Stroll or Sprint to Celebrate Shane's Life
-                    p Registration fees cover car parking, tea/coffe/juice on arrival and a BBQ lunch.
+                    p Registration fees cover car parking, tea/coffee/juice on arrival and a BBQ lunch.
                     p All funds raised will be donated to Shane's family's chosen charity, SOS Bus NI.
                     .form-group
                         .btn.btn-primary.regbtn(ng-click="setPage('Person')") Sign Up!                                
@@ -65,7 +65,7 @@
                             textarea.form-control(name="questmedical", type="text", placeholder="Details...", ng-model="activities.quest.medical")
                     p The following forms will need to be completed and handed in on the day. Copies will be available upon arrival, however it would speed up the registration process if each participant would download and complete the form in advance.
                     div
-                        a(href="assets/LifeParentalConsent.pdf" download="Participant Registration Form.pdf" target="_blank") Participant Registration Form
+                        a(href="assets/LifeParticipantRegistration.pdf" download="Participant Registration Form.pdf" target="_blank") Participant Registration Form
                     div
                         a(href="assets/LifeParentalConsent.pdf" download="Parental Consent Form.pdf" target="_blank") Parental Consent Form                 
                     h4 Lakeside Walk and/or Spectator Activity Registration
@@ -78,10 +78,13 @@
                         label.col-md-4.control-label(for="walkkids") Children £2.50pp x: 
                         .col-md-8
                             input.form-control(type="text" name="walkkids" placeholder="Number of children" ng-model="activities.walk.kids" ng-change="calculateTotal()")
-                    .form-group
-                        label.col-md-4.control-label(for="activitytotalcost") Total Cost: 
-                        .col-md-8
-                            input.form-control(type="text" name="activitytotalcost" placeholder="£0.00" disabled="true" ng-model="activities.totalcost")
+                    h4 Total
+                    p Registration fees will be collected at Castlewellan on the morning of the event.
+                    div(id="total-cost-div")
+                        .form-group
+                            label.col-md-4.control-label(for="activitytotalcost") Total Cost £: 
+                            .col-md-8
+                                input.form-control(type="text" name="activitytotalcost" placeholder="£0.00" disabled="true" ng-model="activities.totalcost" style="text-align:right;background-color: #ffdf42;font-weight:bold;")
                     .form-group
                         .col-md-6.btn.btn-primary(ng-click="setPage('Person')") Register
                         .col-md-6.pull-right.btn.btn-primary(ng-click="setPage('Transport')") Transport                                
