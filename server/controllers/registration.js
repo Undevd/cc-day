@@ -39,8 +39,35 @@ exports.createRegistration = function(request, response) {
                 subject: 'Stroll or sprint for Shane',
                 html:`<html>
                         <head>
-                            <link rel="stylesheet" type="text/css" href="https://www.strollorsprint.co.uk/vendor/bootstrap/dist/css/bootstrap.css" />
-                            <link rel="stylesheet" type="text/css" href="https://www.strollorsprint.co.uk/css/site.css" /> 
+                            <style>
+                                body {
+                                        margin: 5pc;
+                                        font-size: 12pt;
+                                        font-family: Arial, Helvetica, sans-serif;
+                                    }
+
+                                    h3{
+                                        color: darkgoldenrod;
+                                        text-align: center;
+                                        padding-bottom: 10px;
+                                    }
+
+                                    h4{
+                                        color: darkgoldenrod;
+                                        padding-top: 10px;
+                                        padding-bottom: 10px;
+                                    }
+                                    .well {
+                                        min-height: 20px;
+                                        padding: 19px;
+                                        margin-bottom: 20px;
+                                        background-color: #f5f5f5;
+                                        border: 1px solid #e3e3e3;
+                                        border-radius: 4px;
+                                        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+                                                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+                                    }
+                            </style>
                         </head>
                         <body>
                             <div class="well">
@@ -110,6 +137,37 @@ exports.createRegistration = function(request, response) {
                 from: 'registration@strollorsprint.co.uk',
                 subject: 'Registration Received',
                 html:`<html>
+                        <head>
+                            <style>
+                                body {
+                                        margin: 5pc;
+                                        font-size: 12pt;
+                                        font-family: Arial, Helvetica, sans-serif;
+                                    }
+
+                                    h3{
+                                        color: darkgoldenrod;
+                                        text-align: center;
+                                        padding-bottom: 10px;
+                                    }
+
+                                    h4{
+                                        color: darkgoldenrod;
+                                        padding-top: 10px;
+                                        padding-bottom: 10px;
+                                    }
+                                    .well {
+                                        min-height: 20px;
+                                        padding: 19px;
+                                        margin-bottom: 20px;
+                                        background-color: #f5f5f5;
+                                        border: 1px solid #e3e3e3;
+                                        border-radius: 4px;
+                                        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+                                                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+                                    }
+                            </style>
+                        </head>
                         <body>
                             <p>A registration has been received:</p>
                             <h4>Details</h4>
