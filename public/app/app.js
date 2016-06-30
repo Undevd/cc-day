@@ -4,7 +4,7 @@ angular.module('myApp').config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
     $routeProvider
-        .when('/home', { templateUrl: '/partials/main/main', controller: 'mvMainCtrl'})
+        .when('/', { templateUrl: '/partials/main/main', controller: 'mvMainCtrl'})
         .when('/about', { templateUrl: '/partials/greeting/about'})
         .when('/register', {templateUrl: '/partials/register/register', controller: 'formCtrl'})
         .when('/stroll', {templateUrl: '/partials/activities/walk'})

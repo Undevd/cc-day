@@ -14,10 +14,6 @@ module.exports = function(app) {
     app.all('/api/*', function(req, res) {
         res.sendStatus(404);
     });
-    
-    app.get('/', function(req, res) {
-        res.render('under_construction');
-    });
 
     app.get('*', function(req, res) {
         res.render('index');
