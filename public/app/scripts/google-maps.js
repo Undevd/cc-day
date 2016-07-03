@@ -1,8 +1,17 @@
 function initMap() 
 {
+    var castlewellan = {lat: 54.260675, lng: -5.952141};
+
     var mapDiv = document.getElementById('map');
     var map = new google.maps.Map(mapDiv, {
-        center: {lat: 54.25800, lng: -5.94182},
-        zoom: 12
+        center: castlewellan,
+        zoom: 15
+    });
+
+    var marker = new google.maps.Marker({
+        position: castlewellan,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title: 'Life Adventure Centre'
     });
 } 
