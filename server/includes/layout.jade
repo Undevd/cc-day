@@ -33,22 +33,22 @@ html(ng-app='myApp')
                             a(href="/contact") Contact Us
         .container-fluid
             .well
-                .col-xs-1.col-md-3
-                .col-xs-10.col-md-6
+                .col-md-3
+                .col-xs-12.col-md-6
                     block main-content
-                .col-xs-1.col-md-3
+                .col-md-3
         footer.container.text-center
             div(ng-controller="mvMainCtrl")
         include scripts
             footer.container.text-center
                 .col-md-4
                         a(href ="http://www.civica.co.uk")
-                            img(src="assets/Civica.png" alt="Civica" align="right" height="40px" width="160px")
+                            img.img-responsive(id="logo" style="display: block; margin: auto;" src="assets/Civica.png" alt="Civica" align="middle")
                 .col-md-4
                         a(href ="http://www.sosbusni.com")
-                            img(src="assets/SOS.png" alt="SOS" align="middle" height="70px" width="70px")
+                            img.img-responsive(id="logo" style="display: block; margin: auto;" src="assets/SOS.png" alt="SOS" align="middle")
                 .col-md-4
                         a(href ="http://www.lifeadventureco.com")
-                            img(src="assets/LAC.png" alt="LAC" align="left" height="50px" width="160px")
+                            img.img-responsive(id="logo" style="display: block; margin: auto;" src="assets/LAC.png" alt="LAC" align="middle")
             
 
