@@ -5,14 +5,20 @@ html(ng-app='myApp')
         base(href="/")
         link(rel="stylesheet", href="/vendor/bootstrap/dist/css/bootstrap.css")
         link(rel="stylesheet", href="/css/site.css")
-        .navbar.navbar-inverse.navbar-fixed-top
-            .container
+        .navbar.navbar-inverse
+            .container-fluid
                 .navbar-header
+                    button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#strollorsprintnav" aria-expanded="false")
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
                     a.navbar-brand(href="/") Stroll or Sprint for Shane
-                .navbar-collapse.collapse
+                .navbar-collapse.collapse(id="strollorsprintnav")
                     ul.nav.navbar-nav
                         li
                             a(href="/about") About Us
+                                span.sr-only (current)
                         li
                             a(href="/challenge") Team Challenge
                         li
@@ -20,24 +26,29 @@ html(ng-app='myApp')
                         li 
                             a(href="/register") Register
                         li 
-                            a(href="https://home.justgiving.com/" target="_blank") Just Giving
+                            a(href="https://www.justgiving.com/fundraising/strollorsprint" target="_blank") Just Giving
                         li 
                             a(href="/location") Find Us
                         li 
                             a(href="/contact") Contact Us
-        block main-content
+        .container-fluid
+            .well
+                .col-xs-1.col-md-3
+                .col-xs-10.col-md-6
+                    block main-content
+                .col-xs-1.col-md-3
         footer.container.text-center
             div(ng-controller="mvMainCtrl")
         include scripts
             footer.container.text-center
                 .col-md-4
                         a(href ="http://www.civica.co.uk")
-                            img(src="assets/Civica.png" alt="Civica" align="middle" height="40px" width="160px")
+                            img(src="assets/Civica.png" alt="Civica" align="right" height="40px" width="160px")
                 .col-md-4
                         a(href ="http://www.sosbusni.com")
                             img(src="assets/SOS.png" alt="SOS" align="middle" height="70px" width="70px")
                 .col-md-4
                         a(href ="http://www.lifeadventureco.com")
-                            img(src="assets/LAC.png" alt="LAC" align="middle" height="50px" width="160px")
+                            img(src="assets/LAC.png" alt="LAC" align="left" height="50px" width="160px")
             
 
