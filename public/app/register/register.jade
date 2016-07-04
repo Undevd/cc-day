@@ -1,141 +1,140 @@
-.container
-    form.form-horizontal(name="regForm" ng-controller="formCtrl")
-        .well
-            div(ng-switch="page")
-                <!-- Welcome Page-->
-                div(ng-switch-when="Welcome")
-                    h3 Stroll or Sprint to Celebrate Shane's Life
-                    p Registration fees cover car parking, tea/coffee/juice on arrival and a BBQ lunch.
-                    p All funds raised will be donated to Shane's family's chosen charity, SOS Bus NI.
+form.form-horizontal(name="regForm" ng-controller="formCtrl")
+    .well
+        div(ng-switch="page")
+            <!-- Welcome Page-->
+            div(ng-switch-when="Welcome")
+                h3 Stroll or Sprint to Celebrate Shane's Life
+                p Registration fees cover car parking, tea/coffee/juice on arrival and a BBQ lunch.
+                p All funds raised will be donated to Shane's family's chosen charity, SOS Bus NI.
+                .form-group
+                    .btn.btn-primary.regbtn(ng-click="setPage('Person')") Sign Up!                                
+            <!-- Person Details -->
+            div(ng-switch-when="Person")
+                h3 Registration Details
+                .form-group
+                    label.col-md-4.control-label(for="name") Name: *
+                    .col-md-8
+                        input.form-control(type="text" name="name" placeholder="Name..." ng-model="details.name" required="required" ng-change="validatePerson()")
+                .form-group
+                    label.col-md-4.control-label(for="contactnumber") Contact Number: 
+                    .col-md-8
+                        input.form-control(type="text" name="contactnumber" placeholder="Contact Number..." ng-model="details.contactnumber")
+                .form-group
+                    label.col-md-4.control-label(for="emailaddr") E-Mail: *
+                    .col-md-8
+                        input.form-control(type="text" name="emailaddr" placeholder="E-Mail..." ng-model="details.emailaddr" ng-change="validatePerson()")
+                .form-group
+                    label.col-md-4.control-label(for="nextofkin") Next of Kin: 
+                    .col-md-8
+                        input.form-control(type="text" name="nextofkin" placeholder="Next of Kin..." ng-model="details.nextofkin.name")
+                .form-group
+                    label.col-md-4.control-label(for="nextofkin") Next of Kin Contact Number: 
+                    .col-md-8
+                        input.form-control(type="text" name="nextofkincontactnumber" placeholder="Next of Kin Contact Number..." ng-model="details.nextofkin.contactnumber")
+                .form-group
+                    label.col-md-4.control-label(for="howdidyouhear") How did you hear about this event
+                    .col-md-8
+                        select.form-control(name="howdidyouhear" ng-model="details.howdidyouhear")
+                            option(value="") Please select...
+                            option(value="The Mullan Family") The Mullan Family
+                            option(value="Civica") Civica
+                            option(value="SOS Bus NI") SOS Bus NI
+                            option(value="Other") Other
+                p(class="validation-msg" ng-show="details.disabled") Please provide your name and e-mail address
+                .form-group
+                    .col-md-4.btn.btn-primary(ng-click="setPage('Welcome')") Welcome
+                    .col-md-8.pull-right.btn.btn-primary(ng-disabled="details.disabled" ng-click="setPage('Activities')") Activities                                
+            <!-- Lunch -->
+            div(ng-switch-when="Activities")
+                h3 Activities
+                h4 Team Adventure Challenge Registration
+                p Young people under the age of 17 should be accompanied by an adult; minimum age restriction of 11 years old is applicable for this event.
+                p(style="color:red;") 
+                    i Participants are required to bring suitably sturdy outdoor footwear with ankle support and sufficient grip for wet/uneven surfaces and suitable comfortable clothing – Denims and cotton are not ideally suited. Given that participants may get wet, we suggest bringing a full change of clothes, including footwear (shower and changing facilities available).
+                .form-group
+                    label.col-md-4.control-label(for="questadults") Adults (18+) £10pp x: 
+                    .col-md-8
+                        input.form-control(type="text" name="questadults" placeholder="Number of adults" ng-model="activities.quest.adults" ng-change="calculateTotal()")
+                .form-group
+                    label.col-md-4.control-label(for="questkids") Young People (11-17) £10pp x: 
+                    .col-md-8
+                        input.form-control(type="text" name="questkids" placeholder="Number of children" ng-model="activities.quest.kids" ng-change="calculateTotal()")  
+                .form-group
+                    label.col-md-4.control-label(for="questmedical") Please disclose any relevant medical or behavioural conditions:
+                    .col-md-8
+                        textarea.form-control(name="questmedical", type="text", placeholder="Details...", ng-model="activities.quest.medical")
+                p The following forms will need to be completed and handed in on the day. Copies will be available upon arrival, however it would speed up the registration process if each participant would download and complete the form in advance.
+                div
+                    a(href="assets/LifeParticipantRegistration.pdf" download="Participant Registration Form.pdf" target="_blank") Participant Registration Form
+                div
+                    a(href="assets/LifeParentalConsent.pdf" download="Parental Consent Form.pdf" target="_blank") Parental Consent Form                 
+                h4 Lakeside Walk and/or Spectator Activity Registration
+                p Suitable for all ages
+                .form-group
+                    label.col-md-4.control-label(for="walkadults") Young People and Adults £5pp x: 
+                    .col-md-8
+                        input.form-control(type="text" name="walkadults" placeholder="Number of adults" ng-model="activities.walk.adults" ng-change="calculateTotal()")
+                .form-group
+                    label.col-md-4.control-label(for="walkkids") Children under 11 £2.50pp x: 
+                    .col-md-8
+                        input.form-control(type="text" name="walkkids" placeholder="Number of children" ng-model="activities.walk.kids" ng-change="calculateTotal()")
+                h4 Total
+                p Registration fees will be collected at Castlewellan on the morning of the event (Only cash or cheque can be accepted).
+                div(id="total-cost-div")
                     .form-group
-                        .btn.btn-primary.regbtn(ng-click="setPage('Person')") Sign Up!                                
-                <!-- Person Details -->
-                div(ng-switch-when="Person")
-                    h3 Registration Details
-                    .form-group
-                        label.col-md-4.control-label(for="name") Name: *
+                        label.col-md-4.control-label(for="activitytotalcost") Total Cost £: 
                         .col-md-8
-                            input.form-control(type="text" name="name" placeholder="Name..." ng-model="details.name" required="required" ng-change="validatePerson()")
-                    .form-group
-                        label.col-md-4.control-label(for="contactnumber") Contact Number: 
-                        .col-md-8
-                            input.form-control(type="text" name="contactnumber" placeholder="Contact Number..." ng-model="details.contactnumber")
-                    .form-group
-                        label.col-md-4.control-label(for="emailaddr") E-Mail: *
-                        .col-md-8
-                            input.form-control(type="text" name="emailaddr" placeholder="E-Mail..." ng-model="details.emailaddr" ng-change="validatePerson()")
-                    .form-group
-                        label.col-md-4.control-label(for="nextofkin") Next of Kin: 
-                        .col-md-8
-                            input.form-control(type="text" name="nextofkin" placeholder="Next of Kin..." ng-model="details.nextofkin.name")
-                    .form-group
-                        label.col-md-4.control-label(for="nextofkin") Next of Kin Contact Number: 
-                        .col-md-8
-                            input.form-control(type="text" name="nextofkincontactnumber" placeholder="Next of Kin Contact Number..." ng-model="details.nextofkin.contactnumber")
-                    .form-group
-                        label.col-md-4.control-label(for="howdidyouhear") How did you hear about this event
-                        .col-md-8
-                            select.form-control(name="howdidyouhear" ng-model="details.howdidyouhear")
-                                option(value="") Please select...
-                                option(value="The Mullan Family") The Mullan Family
-                                option(value="Civica") Civica
-                                option(value="SOS Bus NI") SOS Bus NI
-                                option(value="Other") Other
-                    p(class="validation-msg" ng-show="details.disabled") Please provide your name and e-mail address
-                    .form-group
-                        .col-md-4.btn.btn-primary(ng-click="setPage('Welcome')") Welcome
-                        .col-md-8.pull-right.btn.btn-primary(ng-disabled="details.disabled" ng-click="setPage('Activities')") Activities                                
-                <!-- Lunch -->
-                div(ng-switch-when="Activities")
-                    h3 Activities
-                    h4 Team Adventure Challenge Registration
-                    p Young people under the age of 17 should be accompanied by an adult; minimum age restriction of 11 years old is applicable for this event.
-                    p(style="color:red;") 
-                        i Participants are required to bring suitably sturdy outdoor footwear with ankle support and sufficient grip for wet/uneven surfaces and suitable comfortable clothing – Denims and cotton are not ideally suited. Given that participants may get wet, we suggest bringing a full change of clothes, including footwear (shower and changing facilities available).
-                    .form-group
-                        label.col-md-4.control-label(for="questadults") Adults (18+) £10pp x: 
-                        .col-md-8
-                            input.form-control(type="text" name="questadults" placeholder="Number of adults" ng-model="activities.quest.adults" ng-change="calculateTotal()")
-                    .form-group
-                        label.col-md-4.control-label(for="questkids") Young People (11-17) £10pp x: 
-                        .col-md-8
-                            input.form-control(type="text" name="questkids" placeholder="Number of children" ng-model="activities.quest.kids" ng-change="calculateTotal()")  
-                    .form-group
-                        label.col-md-4.control-label(for="questmedical") Please disclose any relevant medical or behavioural conditions:
-                        .col-md-8
-                            textarea.form-control(name="questmedical", type="text", placeholder="Details...", ng-model="activities.quest.medical")
-                    p The following forms will need to be completed and handed in on the day. Copies will be available upon arrival, however it would speed up the registration process if each participant would download and complete the form in advance.
-                    div
-                        a(href="assets/LifeParticipantRegistration.pdf" download="Participant Registration Form.pdf" target="_blank") Participant Registration Form
-                    div
-                        a(href="assets/LifeParentalConsent.pdf" download="Parental Consent Form.pdf" target="_blank") Parental Consent Form                 
-                    h4 Lakeside Walk and/or Spectator Activity Registration
-                    p Suitable for all ages
-                    .form-group
-                        label.col-md-4.control-label(for="walkadults") Adults (18+) £5pp x: 
-                        .col-md-8
-                            input.form-control(type="text" name="walkadults" placeholder="Number of adults" ng-model="activities.walk.adults" ng-change="calculateTotal()")
-                    .form-group
-                        label.col-md-4.control-label(for="walkkids") Children £2.50pp x: 
-                        .col-md-8
-                            input.form-control(type="text" name="walkkids" placeholder="Number of children" ng-model="activities.walk.kids" ng-change="calculateTotal()")
-                    h4 Total
-                    p Registration fees will be collected at Castlewellan on the morning of the event (Only cash or cheque can be accepted).
-                    div(id="total-cost-div")
-                        .form-group
-                            label.col-md-4.control-label(for="activitytotalcost") Total Cost £: 
-                            .col-md-8
-                                input.form-control(type="text" name="activitytotalcost" placeholder="£0.00" disabled="true" ng-model="activities.totalcost" style="text-align:right;background-color: #ffdf42;font-weight:bold;")
-                    .form-group
-                        .col-md-6.btn.btn-primary(ng-click="setPage('Person')") Register
-                        .col-md-6.pull-right.btn.btn-primary(ng-click="setPage('Transport')") Transport                                
-                <!-- Transport -->
-                div(ng-switch-when="Transport")
-                    h3 Transport
-                    p SOS Mini buses will provide return transport from Belfast to Castlewellan. Cars can be securely parked in Weavers Court Business Park at the collection point. There are 40 spaces available for allocation on a first come first served basis. Confirmation of allocation will be sent separately after registration.
-                    p <i>Leaving Belfast - 08:30, arriving at Castlewellan - 09:30</i>
-                    p <i>Leaving Castlewellan - 14:30, arriving at Belfast - 15:30</i> 
-                    .form-group
-                        label.col-md-4.control-label(for="transportrequired") Do you require transport: 
-                        .col-md-8
-                            label.col-md-2.control-label(for="transportrequired") Yes:
-                            .col-md-2
-                                input.form-control(type="radio" name="transportrequired" value="true" ng-model="transport.required")
-                            label.col-md-2.control-label(for="transportrequired") No: 
-                            .col-md-2
-                                input.form-control(type="radio" name="transportrequired" value="false" ng-model="transport.required")
-                    .form-group(ng-show="transport.required == 'true'")
-                        label.col-md-4.control-label(for="transporthowmany") How many people: 
-                        .col-md-8
-                            input.form-control(type="text" name="transporthowmany" placeholder="How many people" ng-model="transport.howmany")
-                    .form-group
-                        .col-md-6.btn.btn-primary(ng-click="setPage('Activities')") Activities
-                        .col-md-6.pull-right.btn.btn-primary(ng-click="setPage('Lunch')") Lunch                                
-                <!-- Lunch -->
-                div(ng-switch-when="Lunch")
-                    h3 Lunch
-                    p A BBQ lunch is included in the registration fee. Please indicate how many people in your party will be staying for lunch.
-                    .form-group
-                        label.col-md-4.control-label(for="lunchadults") Adults: 
-                        .col-md-8
-                            input.form-control(type="text" name="lunchadults" placeholder="Number of adults" ng-model="lunch.adults")
-                    .form-group
-                        label.col-md-4.control-label(for="lunchkids") Children: 
-                        .col-md-8
-                            input.form-control(type="text" name="lunchkids" placeholder="Number of children" ng-model="lunch.kids")
-                    .form-group
-                        label.col-md-4.control-label(for="lunchdietaryreqs") Please detail any special dietary requirements within your party
-                        .col-md-8
-                            textarea.form-control(name="lunchdietaryreqs", type="text", placeholder="Details...", ng-model="lunch.dietaryreqs")
-                    .form-group
-                        .col-md-6.btn.btn-primary(ng-click="setPage('Transport')") Transport
-                        .col-md-6.pull-right.btn.btn-success(ng-click="submit()") Submit                                
-                <!-- Submission Successful -->
-                div(ng-switch-when="Submission Successful")    
-                    h3 Registration Successful
-                    h3 Looking forward to seeing you there!
-                    p If you would like to make any amendments please e-mail us @ <a href="mailto:cdsi-csr@civica.co.uk?Subject=Stroll%20or%20Sprint%20amendment">cdsi-csr@civica.co.uk</a>                            
-                <!-- Submission Failed -->
-                div(ng-switch-when="Submission Failed")
-                    h3(style="color: red;") Something has gone wrong
-                    p Please try again, if the problem persists please contact us @ <a href="mailto:cdsi-csr@civica.co.uk?Subject=Stroll%20or%20Sprint%20query">cdsi-csr@civica.co.uk</a>
+                            input.form-control(type="text" name="activitytotalcost" placeholder="£0.00" disabled="true" ng-model="activities.totalcost" style="text-align:right;background-color: #ffdf42;font-weight:bold;")
+                .form-group
+                    .col-md-6.btn.btn-primary(ng-click="setPage('Person')") Register
+                    .col-md-6.pull-right.btn.btn-primary(ng-click="setPage('Transport')") Transport                                
+            <!-- Transport -->
+            div(ng-switch-when="Transport")
+                h3 Transport
+                p SOS Mini buses will provide return transport from Belfast to Castlewellan. Cars can be securely parked in Weavers Court Business Park at the collection point. There are 40 spaces available for allocation on a first come first served basis. Confirmation of allocation will be sent separately after registration.
+                p <i>Leaving Belfast - 08:30, arriving at Castlewellan - 09:30</i>
+                p <i>Leaving Castlewellan - 14:30, arriving at Belfast - 15:30</i> 
+                .form-group
+                    label.col-md-4.control-label(for="transportrequired") Do you require transport: 
+                    .col-md-8
+                        label.col-md-2.control-label(for="transportrequired") Yes:
+                        .col-md-2
+                            input.form-control(type="radio" name="transportrequired" value="true" ng-model="transport.required")
+                        label.col-md-2.control-label(for="transportrequired") No: 
+                        .col-md-2
+                            input.form-control(type="radio" name="transportrequired" value="false" ng-model="transport.required")
+                .form-group(ng-show="transport.required == 'true'")
+                    label.col-md-4.control-label(for="transporthowmany") How many people: 
+                    .col-md-8
+                        input.form-control(type="text" name="transporthowmany" placeholder="How many people" ng-model="transport.howmany")
+                .form-group
+                    .col-md-6.btn.btn-primary(ng-click="setPage('Activities')") Activities
+                    .col-md-6.pull-right.btn.btn-primary(ng-click="setPage('Lunch')") Lunch                                
+            <!-- Lunch -->
+            div(ng-switch-when="Lunch")
+                h3 Lunch
+                p A BBQ lunch is included in the registration fee. Please indicate how many people in your party will be staying for lunch.
+                .form-group
+                    label.col-md-4.control-label(for="lunchadults") Adults: 
+                    .col-md-8
+                        input.form-control(type="text" name="lunchadults" placeholder="Number of adults" ng-model="lunch.adults")
+                .form-group
+                    label.col-md-4.control-label(for="lunchkids") Children: 
+                    .col-md-8
+                        input.form-control(type="text" name="lunchkids" placeholder="Number of children" ng-model="lunch.kids")
+                .form-group
+                    label.col-md-4.control-label(for="lunchdietaryreqs") Please detail any special dietary requirements within your party
+                    .col-md-8
+                        textarea.form-control(name="lunchdietaryreqs", type="text", placeholder="Details...", ng-model="lunch.dietaryreqs")
+                .form-group
+                    .col-md-6.btn.btn-primary(ng-click="setPage('Transport')") Transport
+                    .col-md-6.pull-right.btn.btn-success(ng-click="submit()") Submit                                
+            <!-- Submission Successful -->
+            div(ng-switch-when="Submission Successful")    
+                h3 Registration Successful
+                h3 Looking forward to seeing you there!
+                p If you would like to make any amendments please e-mail us @ <a href="mailto:cdsi-csr@civica.co.uk?Subject=Stroll%20or%20Sprint%20amendment">cdsi-csr@civica.co.uk</a>                            
+            <!-- Submission Failed -->
+            div(ng-switch-when="Submission Failed")
+                h3(style="color: red;") Something has gone wrong
+                p Please try again, if the problem persists please contact us @ <a href="mailto:cdsi-csr@civica.co.uk?Subject=Stroll%20or%20Sprint%20query">cdsi-csr@civica.co.uk</a>
