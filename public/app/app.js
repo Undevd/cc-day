@@ -6,7 +6,7 @@ angular.module('myApp').config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', { templateUrl: '/partials/main/main', controller: 'mvMainCtrl'})
         .when('/about', { templateUrl: '/partials/greeting/about'})
-        .when('/register', {templateUrl: '/partials/register/register', controller: 'formCtrl'})
+        .when('/register', {templateUrl: '/partials/register/registration_closed', controller: 'formCtrl'})
         .when('/stroll', {templateUrl: '/partials/activities/walk'})
         .when('/challenge', {templateUrl: '/partials/activities/quest'})
         .when('/location', {templateUrl: '/partials/location/location'})
